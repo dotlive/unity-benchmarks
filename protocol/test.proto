@@ -1,0 +1,15 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+
+package Protobuf;
+
+message EmbeddedMessage {
+  required int32 id = 1;
+}
+
+message TestMessage {
+  required int32 id = 1;
+  required EmbeddedMessage embedded = 2;
+
+  optional string text = 3;
+}

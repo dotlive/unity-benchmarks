@@ -1,0 +1,16 @@
+namespace FlatBuffers;
+
+file_identifier "TEST";
+file_extension "test";
+
+table EmbeddedMessage {
+  id:int;
+}
+
+table TestMessage {
+  id:int;
+  embedded:EmbeddedMessage;
+  text:string;
+}
+
+root_type TestMessage;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using System;
 
 public class BenchmarksWindow : EditorWindow
 {
@@ -25,6 +26,16 @@ public class BenchmarksWindow : EditorWindow
         if (GUILayout.Button("Simple Instantiation"))
         {
             Benchmark.Load<BenchmarkSimpleInstantiation>().Execute();
+        }
+
+        if (GUILayout.Button("Protobuf serialization"))
+        {
+            Benchmark.Load<BenchmarkProtobuf>().Execute();
+        }
+
+        if (GUILayout.Button("Flatbuffers serialization"))
+        {
+            Benchmark.Load<BenchmarkFlatbuffers>().Execute();
         }
     }
 }
